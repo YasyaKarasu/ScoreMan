@@ -24,7 +24,7 @@ func CreateTables() {
 		logrus.Fatal("Database is nil")
 	}
 
-	err := db.AutoMigrate(&Student{})
+	err := db.AutoMigrate(&Student{}, &Exam{}, &Score{})
 
 	if err != nil {
 		logrus.Fatal(err)
